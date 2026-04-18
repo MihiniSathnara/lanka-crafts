@@ -24,7 +24,11 @@ const app = express();
 const httpServer = createServer(app);
 initSocket(httpServer);
 
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+// app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+app.use(cors({
+  origin: ['https://cuddly-journey-7vrj4x55pr4whw5qr-5173.app.github.dev', 'https://cuddly-journey-7vrj4x55pr4whw5qr-5000.app.github.dev'],
+  credentials: true
+}));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use(cookieParser());
