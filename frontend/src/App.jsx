@@ -15,11 +15,14 @@ import SriLankaMap from './pages/SriLankaMap.jsx';
 import WorkshopBooking from './pages/WorkshopBooking.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
+import Blogs from './pages/Blogs.jsx';
+import BlogDetail from './pages/BlogDetail.jsx';
 
 import TouristDashboard from './pages/tourist/Dashboard.jsx';
 import TouristProfile from './pages/tourist/Profile.jsx';
 import TouristBookings from './pages/tourist/Bookings.jsx';
 import TouristChats from './pages/tourist/Chats.jsx';
+import { TouristBlogList, BlogForm } from './pages/tourist/Blogs.jsx';
 
 import ArtistDashboard from './pages/artist/Dashboard.jsx';
 import ArtistProfilePage from './pages/artist/Profile.jsx';
@@ -47,12 +50,17 @@ export default function App() {
           <Route path="/workshops" element={<WorkshopBooking />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/:id" element={<BlogDetail />} />
 
           <Route element={<ProtectedRoute roles={['tourist']} />}>
             <Route path="/tourist/dashboard" element={<TouristDashboard />} />
             <Route path="/tourist/profile" element={<TouristProfile />} />
             <Route path="/tourist/bookings" element={<TouristBookings />} />
             <Route path="/tourist/chats" element={<TouristChats />} />
+            <Route path="/tourist/blogs" element={<TouristBlogList />} />
+            <Route path="/tourist/blogs/new" element={<BlogForm />} />
+            <Route path="/tourist/blogs/:id/edit" element={<BlogForm />} />
           </Route>
 
           <Route element={<ProtectedRoute roles={['artist']} />}>

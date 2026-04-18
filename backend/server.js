@@ -16,6 +16,7 @@ import reviewRoutes from './routes/reviewRoutes.js';
 import chatbotRoutes from './routes/chatbotRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
 import mapRoutes from './routes/mapRoutes.js';
+import blogRoutes from './routes/blogRoutes.js';
 import { seedChatbot } from './seeders/chatbotSeeder.js';
 
 connectDB().then(() => seedChatbot());
@@ -43,6 +44,7 @@ app.use('/api/reviews', reviewRoutes);
 app.use('/api/chatbot', chatbotRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/map', mapRoutes);
+app.use('/api/blogs', blogRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
